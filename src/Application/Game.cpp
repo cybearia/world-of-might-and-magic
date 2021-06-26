@@ -164,7 +164,7 @@ void Game::Run() {
 
     render = IRenderFactory().Create(
         window,
-        config->renderer_name,
+        "OpenGL",
         false
     );
     ::render = render;
