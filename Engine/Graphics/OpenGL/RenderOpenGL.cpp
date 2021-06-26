@@ -3100,22 +3100,16 @@ void RenderOpenGL::DrawOutdoorSkyD3D() {
 
         _set_ortho_projection(1);
         _set_ortho_modelview();
-
-        VertexRenderList[1].vWorldViewProjY =
-            VertexRenderList[1].vWorldViewProjY + 80.0;
-        VertexRenderList[2].vWorldViewProjY =
-            VertexRenderList[2].vWorldViewProjY + 80.0;
-
+     
         this->DrawOutdoorSkyPolygon(&pSkyPolygon);
 
-        VertexRenderList[0].vWorldViewProjY = (double)top_y_proj;
-        VertexRenderList[1].vWorldViewProjY =
-            VertexRenderList[1].vWorldViewProjY + 30.0;
-        VertexRenderList[2].vWorldViewProjY =
-            VertexRenderList[2].vWorldViewProjY + 30.0;
-        VertexRenderList[3].vWorldViewProjY = (double)top_y_proj;
+        //Temporary fix for sky gap when looking up
+        VertexRenderList[0].vWorldViewProjY += 0;
+        VertexRenderList[1].vWorldViewProjY += 230;
+        VertexRenderList[2].vWorldViewProjY += 230;
+        VertexRenderList[3].vWorldViewProjY += 0;
 
-        // this->DrawOutdoorSkyPolygon(&pSkyPolygon);
+        this->DrawOutdoorSkyPolygon(&pSkyPolygon);
     }
 }
 
