@@ -88,6 +88,9 @@ std::shared_ptr<EngineConfig> EngineConfigFactory::Create(std::shared_ptr<Comman
     if (command_line->TryFindKey("-nosound")) {
         config->no_sound = true;
     }
+    if (command_line->TryFindKey("-mutesound")) {
+        config->MuteSound();
+    }
     if (command_line->TryFindKey("-novideo")) {
         config->no_video = true;
     }

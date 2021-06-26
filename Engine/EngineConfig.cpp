@@ -3,6 +3,13 @@
 using Engine_::EngineConfig;
 
 
+void Engine_::EngineConfig::MuteSound()
+{
+    sound_level = 0;
+    voice_level = 0;
+    music_level = 0;
+}
+
 void EngineConfig::SetSaturateFaces(bool saturate) {
     if (saturate)
         flags2 |= GAME_FLAGS_2_SATURATE_LIGHTMAPS;

@@ -54,6 +54,7 @@ class EngineConfig {
     inline void ToggleFlipOnExit() { flip_on_exit = !flip_on_exit; }
     inline void ToggleWalkSound() { no_walk_sound = !no_walk_sound; }
     inline void ToggleBloodsplats() { no_bloodsplats = !no_bloodsplats; }
+           void MuteSound();
 
     inline bool Flag1_1() const { return flags1 & GAME_FLAGS_1_01; }
     inline bool Flag1_2() const { return flags1 & GAME_FLAGS_1_02; }
